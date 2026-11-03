@@ -149,6 +149,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Lego.h" />
+    <ClInclude Include="Lego_Rectangulo.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form_Desarrollo.resx">

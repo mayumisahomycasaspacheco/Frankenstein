@@ -1,4 +1,5 @@
 #pragma once
+#include "Lego_Rectangulo.h"
 
 namespace Frankenstein {
 
@@ -18,9 +19,7 @@ namespace Frankenstein {
 		Form_Desarrollo(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: agregar código de constructor aquí
-			//
+			lego_rectangulo = gcnew Lego_Rectangulo(50, 100, 400, 250, 80, 40, ColorTranslator::ToWin32(Color::Red));
 		}
 
 	protected:
@@ -40,6 +39,7 @@ namespace Frankenstein {
 		/// Variable del diseñador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
+		Lego_Rectangulo^ lego_rectangulo;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -50,7 +50,7 @@ namespace Frankenstein {
 		{
 			this->SuspendLayout();
 			// 
-			// MyForm
+			// Form_Desarrollo
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -61,11 +61,16 @@ namespace Frankenstein {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Frankenstein";
 			this->Load += gcnew System::EventHandler(this, &Form_Desarrollo::Form_Desarrollo_Load);
+			this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form_Desarrollo::Form_Desarrollo_Paint);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void Form_Desarrollo_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void Form_Desarrollo_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) 
+	{
+		lego_rectangulo->dibujar(e->Graphics);
 	}
 	};
 }

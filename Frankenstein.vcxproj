@@ -142,6 +142,7 @@
     <ClCompile Include="Form_Desarrollo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Controladora.h" />
     <ClInclude Include="Form_Inicio.h">
       <FileType>CppForm</FileType>
     </ClInclude>

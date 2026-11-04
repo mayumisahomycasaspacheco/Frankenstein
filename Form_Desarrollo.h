@@ -33,12 +33,15 @@ namespace Frankenstein {
 				delete components;
 			}
 		}
+	private: System::ComponentModel::IContainer^ components;
+	protected:
+	private: System::Windows::Forms::Timer^ timer1;
 
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 		Lego_Rectangulo^ lego_rectangulo;
 
 #pragma region Windows Form Designer generated code
@@ -48,7 +51,15 @@ namespace Frankenstein {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->SuspendLayout();
+			// 
+			// timer1
+			// 
+			this->timer1->Enabled = true;
+			this->timer1->Interval = 30;
+			this->timer1->Tick += gcnew System::EventHandler(this, &Form_Desarrollo::timer1_Tick);
 			// 
 			// Form_Desarrollo
 			// 
@@ -71,6 +82,11 @@ namespace Frankenstein {
 	private: System::Void Form_Desarrollo_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) 
 	{
 		lego_rectangulo->dibujar(e->Graphics);
+	}
+	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) 
+	{
+		lego_rectangulo->mover(true);
+		this->Invalidate();
 	}
 	};
 }

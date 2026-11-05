@@ -49,7 +49,7 @@ void Lego::mover(bool armado)
 		y = y + ((y_final - y) / 10);
 	}
 
-	else
+	else if (armado == false)
 	{
 		x = x + ((x_inicial - x) / 10);
 		y = y + ((y_inicial - y) / 10);

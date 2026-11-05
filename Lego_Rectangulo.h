@@ -10,7 +10,7 @@ public:
 	Lego_Rectangulo(int x_inicial, int y_inicial, int x_final, int y_final, int ancho, int alto, int color);
 	~Lego_Rectangulo();
 
-	virtual void dibujar(Graphics^ graphics) override;
+	void dibujar(Graphics^ graphics) override;
 };
 
 Lego_Rectangulo::Lego_Rectangulo(int x_inicial, int y_inicial, int x_final, int y_final, int ancho, int alto, int color) : Lego(x_inicial, y_inicial, x_final, y_final, ancho, alto, color)

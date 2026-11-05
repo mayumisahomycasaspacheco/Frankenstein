@@ -1,5 +1,6 @@
 #pragma once
 #include "Lego_Rectangulo.h"
+#include "Lego_Elipse.h"
 
 namespace Frankenstein {
 
@@ -19,7 +20,9 @@ namespace Frankenstein {
 		Form_Desarrollo(void)
 		{
 			InitializeComponent();
+			this->DoubleBuffered = true;
 			lego_rectangulo = gcnew Lego_Rectangulo(50, 100, 400, 250, 80, 40, ColorTranslator::ToWin32(Color::Red));
+			lego_elipse = gcnew Lego_Elipse(50, 300, 200, 150, 60, 60, ColorTranslator::ToWin32(Color::Blue));
 		}
 
 	protected:
@@ -43,6 +46,7 @@ namespace Frankenstein {
 		/// </summary>
 
 		Lego_Rectangulo^ lego_rectangulo;
+		Lego_Elipse^ lego_elipse;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -82,10 +86,12 @@ namespace Frankenstein {
 	private: System::Void Form_Desarrollo_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) 
 	{
 		lego_rectangulo->dibujar(e->Graphics);
+		lego_elipse->dibujar(e->Graphics);
 	}
 	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) 
 	{
 		lego_rectangulo->mover(true);
+		lego_elipse->mover(true);
 		this->Invalidate();
 	}
 	};

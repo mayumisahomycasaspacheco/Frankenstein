@@ -1,4 +1,9 @@
 #pragma once
+#include "Lego_Rectangulo.h"
+#include "Lego_Elipse.h"
+#include "Lego_Triangulo.h"
+#include "Lego_Linea.h"
+#include "Controladora.h"
 
 namespace Frankenstein {
 
@@ -18,9 +23,8 @@ namespace Frankenstein {
 		Form_Desarrollo(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: agregar código de constructor aquí
-			//
+			this->DoubleBuffered = true;
+			controladora = gcnew Controladora();
 		}
 
 	protected:
@@ -41,6 +45,9 @@ namespace Frankenstein {
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
+		Controladora^ controladora;
+		bool armado;
+
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Método necesario para admitir el Diseñador. No se puede modificar
@@ -60,12 +67,28 @@ namespace Frankenstein {
 			this->Name = L"Form_Desarrollo";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Frankenstein";
-			this->Load += gcnew System::EventHandler(this, &Form_Desarrollo::Form_Desarrollo_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void Form_Desarrollo_Load(System::Object^ sender, System::EventArgs^ e) {
-	}
+		int color_rgb(int r, int g, int b)
+		{
+			return ColorTranslator::ToWin32(Color::FromArgb(r, g, b));
+		}
+
+		//Escena 1 : Crear Robot
+
+		void crear_robot()
+		{
+			controladora->agregar(gcnew Lego_Triangulo(780, 180, 410, 95, 25, 15, color_rgb(130, 60, 160)));
+			controladora->agregar(gcnew Lego_Triangulo(830, 180, 465, 95, 25, 15, color_rgb(130, 60, 160)));
+			controladora->agregar(gcnew Lego_Linea(720, 170, 450, 70, 0, 40, color_rgb(200, 200, 210)));
+			controladora->agregar(gcnew Lego_Elipse(650, 180, 440, 55, 20, 20, color_rgb(255, 120, 0)));
+		}
+		
+		private: System::Void Form_Desarrollo_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e)
+		{
+			e->Graphics->SmoothingMode = System::Drawing 
+		}
 	};
 }

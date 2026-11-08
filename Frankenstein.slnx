@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Frankenstein.vcxproj" />
+  <Project Path="Frankenstein.vcxproj" Id="c0594815-bd52-d47c-be41-f3bacc5e7c75" />
 </Solution>

@@ -9,8 +9,6 @@ int main(array<String^>^ args)
 {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	Frankenstein::Form_Desarrollo^ frm = gcnew Frankenstein::Form_Desarrollo();
-	frm->cargar_escena(2);
-	Application::Run(frm);
+	Application::Run(gcnew Frankenstein::Form_Selection());
 	return 0;
 }

@@ -1,6 +1,7 @@
 #pragma once
+#include "Form_Selection.h"
 
-namespace Fankeinsten {
+namespace Frankenstein {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -48,11 +49,19 @@ namespace Fankeinsten {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"Form_Inicio";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->SuspendLayout();
+			// 
+			// Form_Inicio
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(1182, 620);
+			this->MaximizeBox = false;
+			this->Name = L"Form_Inicio";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Form_Inicio";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	};

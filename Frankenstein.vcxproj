@@ -140,6 +140,8 @@
   <ItemGroup>
     <ClCompile Include="Form_Inicio.cpp" />
     <ClCompile Include="Form_Desarrollo.cpp" />
+    <ClCompile Include="Form_Creditos.cpp" />
+    <ClCompile Include="Form_Selection.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controladora.h" />
@@ -147,6 +149,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form_Desarrollo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Form_Creditos.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Form_Selection.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Lego.h" />
@@ -158,6 +166,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Form_Desarrollo.resx">
       <DependentUpon>Form_Desarrollo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Creditos.resx">
+      <DependentUpon>Form_Creditos.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Inicio.resx">
+      <DependentUpon>Form_Inicio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Selection.resx">
+      <DependentUpon>Form_Selection.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

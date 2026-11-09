@@ -110,12 +110,39 @@ namespace Frankenstein {
 			controladora->agregar(gcnew Lego_Rectangulo(230, 40, 340, 215, 40, 110, color_rgb(110, 170, 90)));
 			controladora->agregar(gcnew Lego_Rectangulo(230, 170, 520, 215, 40, 110, color_rgb(110, 170, 90)));
 			controladora->agregar(gcnew Lego_Rectangulo(60, 150, 380, 205, 140, 150, color_rgb(90, 110, 150)));
-			controladora->agregar(gcnew Lego_Rectangulo());
+			controladora->agregar(gcnew Lego_Rectangulo(650, 110, 435, 250, 30, 30, color_rgb(255, 120, 0)));
+
+			controladora->agregar(gcnew Lego_Rectangulo(50, 330, 400, 355, 45, 110, color_rgb(70, 80, 130)));
+			controladora->agregar(gcnew Lego_Rectangulo(120, 330, 455, 355, 45, 110, color_rgb(70, 80, 130)));
+			controladora->agregar(gcnew Lego_Rectangulo(200, 330, 390, 465, 60, 20, color_rgb(40, 40, 55)));
+			controladora->agregar(gcnew Lego_Rectangulo(200, 380, 450, 465, 60, 20, color_rgb(40, 40, 55)));
 		}
 
 		void crear_casa()
 		{
+			controladora->agregar(gcnew Lego_Rectangulo(790, 160, 525, 185, 30, 60, color_rgb(90, 90, 100)));
+			controladora->agregar(gcnew Lego_Linea(830, 130, 540, 185, 10, -35, color_rgb(200, 200, 210)));
 
+			controladora->agregar(gcnew Lego_Rectangulo(30, 40, 330, 270, 240, 170, color_rgb(120, 100, 140)));
+			controladora->agregar(gcnew Lego_Triangulo(20, 230, 310, 170, 280, 100, color_rgb(170, 40, 40)));
+
+			controladora->agregar(gcnew Lego_Rectangulo(640, 40, 470, 310, 70, 70, color_rgb(250, 220, 90)));
+			controladora->agregar(gcnew Lego_Linea(740, 40, 505, 310, 0, 70, color_rgb(90, 50, 20)));
+			controladora->agregar(gcnew Lego_Linea(780, 60, 470, 345, 70, 0, color_rgb(90, 50, 20)));
+
+			controladora->agregar(gcnew Lego_Rectangulo(40, 350, 360, 350, 60, 90, color_rgb(110, 60, 30)));
+			controladora->agregar(gcnew Lego_Elipse(260, 430, 405, 392, 8, 8, color_rgb(240, 200, 60)));
+
+			controladora->agregar(gcnew Lego_Linea(230, 350, 140, 380, 0, 80, color_rgb(100, 60, 30)));
+			controladora->agregar(gcnew Lego_Elipse(130, 350, 105, 320, 70, 70, color_rgb(40, 110, 50)));
+
+			controladora->agregar(gcnew Lego_Linea(740, 170, 800, 380, 0, 80, color_rgb(100, 60, 30)));
+			controladora->agregar(gcnew Lego_Elipse(620, 150, 755, 290, 90, 100, color_rgb(40, 110,50)));
+
+			controladora->agregar(gcnew Lego_Rectangulo(620, 330, 590, 470, 130, 35, color_rgb(200, 60, 60)));
+			controladora->agregar(gcnew Lego_Rectangulo(780, 330, 620, 445, 60, 25, color_rgb(200, 220, 240)));
+			controladora->agregar(gcnew Lego_Elipse(640, 410, 610, 490, 26, 26, color_rgb(20, 20, 25)));
+			controladora->agregar(gcnew Lego_Elipse(700, 410, 685, 490, 26, 26, color_rgb(20, 20, 25)));
 		}
 		
 		private: System::Void Form_Desarrollo_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e)

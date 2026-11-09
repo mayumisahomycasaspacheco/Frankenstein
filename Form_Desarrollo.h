@@ -52,12 +52,18 @@ namespace Frankenstein {
 				delete components;
 			}
 		}
+	private: System::ComponentModel::IContainer^ components;
+	protected:
 
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+
+		System::Windows::Forms::Timer^ timer1;
+		System::Windows::Forms::Button^ btn_armar;
+		System::Windows::Forms::Button^ btn_desarmar;
+		System::Windows::Forms::Button^ btn_menu;
 
 		Controladora^ controladora;
 		bool armado;
@@ -69,18 +75,85 @@ namespace Frankenstein {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->btn_armar = (gcnew System::Windows::Forms::Button());
+			this->btn_desarmar = (gcnew System::Windows::Forms::Button());
+			this->btn_menu = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// MyForm
+			// timer1
+			// 
+			this->timer1->Enabled = true;
+			this->timer1->Interval = 20;
+			this->timer1->Tick += gcnew System::EventHandler(this, &Form_Desarrollo::timer1_Tick);
+			// 
+			// btn_armar
+			// 
+			this->btn_armar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(230)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->btn_armar->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_armar->Font = (gcnew System::Drawing::Font(L"Consolas", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_armar->ForeColor = System::Drawing::Color::White;
+			this->btn_armar->Location = System::Drawing::Point(424, 537);
+			this->btn_armar->Name = L"btn_armar";
+			this->btn_armar->Size = System::Drawing::Size(166, 46);
+			this->btn_armar->TabIndex = 0;
+			this->btn_armar->TabStop = false;
+			this->btn_armar->Text = L"ARMAR";
+			this->btn_armar->UseVisualStyleBackColor = false;
+			this->btn_armar->Click += gcnew System::EventHandler(this, &Form_Desarrollo::btn_armar_Click);
+			// 
+			// btn_desarmar
+			// 
+			this->btn_desarmar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(40)),
+				static_cast<System::Int32>(static_cast<System::Byte>(160)));
+			this->btn_desarmar->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_desarmar->Font = (gcnew System::Drawing::Font(L"Consolas", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_desarmar->ForeColor = System::Drawing::Color::White;
+			this->btn_desarmar->Location = System::Drawing::Point(594, 537);
+			this->btn_desarmar->Name = L"btn_desarmar";
+			this->btn_desarmar->Size = System::Drawing::Size(166, 46);
+			this->btn_desarmar->TabIndex = 1;
+			this->btn_desarmar->TabStop = false;
+			this->btn_desarmar->Text = L"DESARMAR";
+			this->btn_desarmar->UseVisualStyleBackColor = false;
+			this->btn_desarmar->Click += gcnew System::EventHandler(this, &Form_Desarrollo::btn_desarmar_Click);
+			// 
+			// btn_menu
+			// 
+			this->btn_menu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(60)),
+				static_cast<System::Int32>(static_cast<System::Byte>(80)));
+			this->btn_menu->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_menu->Font = (gcnew System::Drawing::Font(L"Consolas", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_menu->ForeColor = System::Drawing::Color::White;
+			this->btn_menu->Location = System::Drawing::Point(944, 537);
+			this->btn_menu->Name = L"btn_menu";
+			this->btn_menu->Size = System::Drawing::Size(126, 46);
+			this->btn_menu->TabIndex = 2;
+			this->btn_menu->TabStop = false;
+			this->btn_menu->Text = L"Menu";
+			this->btn_menu->UseVisualStyleBackColor = false;
+			this->btn_menu->Click += gcnew System::EventHandler(this, &Form_Desarrollo::btn_menu_Click);
+			// 
+			// Form_Desarrollo
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(882, 553);
+			this->BackColor = System::Drawing::Color::White;
+			this->ClientSize = System::Drawing::Size(1182, 620);
+			this->Controls->Add(this->btn_menu);
+			this->Controls->Add(this->btn_desarmar);
+			this->Controls->Add(this->btn_armar);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"Form_Desarrollo";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Frankenstein";
+			this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form_Desarrollo::Form_Desarrollo_Paint);
 			this->ResumeLayout(false);
 
 		}
@@ -118,6 +191,8 @@ namespace Frankenstein {
 			controladora->agregar(gcnew Lego_Rectangulo(200, 380, 450, 465, 60, 20, color_rgb(40, 40, 55)));
 		}
 
+		//Escena 2: Crear Casa
+
 		void crear_casa()
 		{
 			controladora->agregar(gcnew Lego_Rectangulo(790, 160, 525, 185, 30, 60, color_rgb(90, 90, 100)));
@@ -143,6 +218,27 @@ namespace Frankenstein {
 			controladora->agregar(gcnew Lego_Rectangulo(780, 330, 620, 445, 60, 25, color_rgb(200, 220, 240)));
 			controladora->agregar(gcnew Lego_Elipse(640, 410, 610, 490, 26, 26, color_rgb(20, 20, 25)));
 			controladora->agregar(gcnew Lego_Elipse(700, 410, 685, 490, 26, 26, color_rgb(20, 20, 25)));
+		}
+
+		private: System::Void btn_armar_Click(System::Object^ sender, System::EventArgs^ e)
+		{
+			armado = true;
+		}
+
+		private: System::Void btn_desarmar_Click(System::Object^ sender, System::EventArgs^ e)
+		{
+			armado = false;
+		}
+
+		private: System::Void btn_menu_Click(System::Object^ sender, System::EventArgs^ e)
+		{
+			this->Close();
+		}
+
+		private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e)
+		{
+			controladora->mover_todo(armado);
+			this->Invalidate();
 		}
 		
 		private: System::Void Form_Desarrollo_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e)

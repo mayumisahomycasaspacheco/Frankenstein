@@ -23,6 +23,14 @@ namespace Frankenstein {
 		Form_Desarrollo(void)
 		{
 			InitializeComponent();
+
+			String^ ruta = System::IO::Path::Combine(Application::StartupPath, L"Sprite-0001.png");
+			if (System::IO::File::Exists(ruta))
+			{
+				this->BackgroundImage = Image::FromFile(ruta);
+				this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			}
+
 			this->DoubleBuffered = true;
 			controladora = gcnew Controladora();
 			armado = false;
@@ -101,7 +109,7 @@ namespace Frankenstein {
 			this->btn_armar->Size = System::Drawing::Size(166, 46);
 			this->btn_armar->TabIndex = 0;
 			this->btn_armar->TabStop = false;
-			this->btn_armar->Text = L"ARMAR";
+			this->btn_armar->Text = L"ARM";
 			this->btn_armar->UseVisualStyleBackColor = false;
 			this->btn_armar->Click += gcnew System::EventHandler(this, &Form_Desarrollo::btn_armar_Click);
 			// 
@@ -118,7 +126,7 @@ namespace Frankenstein {
 			this->btn_desarmar->Size = System::Drawing::Size(166, 46);
 			this->btn_desarmar->TabIndex = 1;
 			this->btn_desarmar->TabStop = false;
-			this->btn_desarmar->Text = L"DESARMAR";
+			this->btn_desarmar->Text = L"DISARM";
 			this->btn_desarmar->UseVisualStyleBackColor = false;
 			this->btn_desarmar->Click += gcnew System::EventHandler(this, &Form_Desarrollo::btn_desarmar_Click);
 			// 

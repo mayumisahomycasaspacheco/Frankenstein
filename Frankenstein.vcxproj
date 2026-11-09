@@ -172,6 +172,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Inicio.resx">
       <DependentUpon>Form_Inicio.h</DependentUpon>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+      <LogicalName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">   $(IntDir)Frankenstein.%(Filename).resources</LogicalName>
+      <LogicalName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">   $(IntDir)Frankenstein.%(Filename).resources</LogicalName>
+      <LogicalName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">   $(IntDir)Frankenstein.%(Filename).resources</LogicalName>
+      <LogicalName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">   $(IntDir)Frankenstein.%(Filename).resources</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Selection.resx">
       <DependentUpon>Form_Selection.h</DependentUpon>

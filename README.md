@@ -1,5 +1,5 @@
-# Fankeinsten
-Fankeinsten is a small haunted-house puzzle made with C++ and Windows Forms. A robot and a spooky house are made of loose geometric pieces scattered around the screen. Press ARMAR and every piece flies to its place, press DESARMAR and the chaos comes back.
+# Frankenstein
+Frankenstein is a small haunted-house puzzle made with C++ and Windows Forms. A robot and a spooky house are made of loose geometric pieces scattered around the screen. Press ARM and every piece flies to its place, press DISARM and the chaos comes back.
 
 ![Fankeinsten](https://cdn.hackclub.com/01a1bead-2949-77be-9a71-af0e50ff1856/captura_de_pantalla_2026-11-08_235138.png)
 
